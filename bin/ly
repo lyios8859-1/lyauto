@@ -1,0 +1,61 @@
+const { resolve } = require("path");
+const program = require("commander");
+
+// 定义脚手架的文件路径
+const res = command => {
+  return resolve(__dirname, "../commands/", command);
+};
+
+// 定义当前版本
+program.version(require("../package.json").version);
+
+// 定义使用方法
+program.usage("<command>");
+
+// 各种命令定义 add list init delete map
+program
+  .command("add")
+  .description("Add a new template")
+  .alias("a")
+  .action(() => {
+    require(res("add"))
+  });
+
+program
+  .command("list")
+  .description("List all the templates")
+  .alias("l")
+  .action(() => {
+    require(res("list"))
+  });
+
+program
+  .command("init")
+  .description("Generate a new project")
+  .alias("i")
+  .action(() => {
+    require(res("init"))
+  });
+
+program
+  .command("delete")
+  .description("Delete a template")
+  .alias("d")
+  .action(() => {
+    require(res("delete"))
+  });
+
+program
+  .command("map")
+  .description("Place files to diffirent position")
+  .alias("m")
+  .action(() => {
+    require(res("map"))
+  });
+
+program.parse(process.argv);
+
+// 帮助信息
+if(!program.args.length){
+  program.help();
+}
