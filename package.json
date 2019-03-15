@@ -23,5 +23,15 @@
   "bugs": {
     "url": "https://github.com/lyios8859-1/lyauto/issues"
   },
-  "homepage": "https://github.com/lyios8859-1/lyauto#readme"
+  "homepage": "https://github.com/lyios8859-1/lyauto#readme",
+  "devDependencies": {
+    "eslint": "^5.15.1"
+  },
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "cli-table": "^0.3.1",
+    "commander": "^2.19.0",
+    "inquirer": "^6.2.2",
+    "ora": "^3.2.0"
+  }
 }
