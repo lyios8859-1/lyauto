@@ -1,0 +1,27 @@
+{
+  "name": "lyauto",
+  "version": "1.0.0",
+  "description": "一个简单的前端脚手架创建您的项目",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "ly": "bin/ly"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lyios8859-1/lyauto.git"
+  },
+  "keywords": [
+    "lyauto",
+    "cli",
+    "es6"
+  ],
+  "author": "Timly",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lyios8859-1/lyauto/issues"
+  },
+  "homepage": "https://github.com/lyios8859-1/lyauto#readme"
+}
