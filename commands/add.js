@@ -1,4 +1,5 @@
 const fs = require("fs");
+const chalk = require("chalk");
 const { prompt } = require("inquirer");
 
 let tplList = require(`${__dirname}/../templates/templates.json`);
@@ -53,10 +54,10 @@ const resultInfo = prompt(question).then(({ tplName, gitUrl, Branch }) => {
     "utf-8",
     err => {
       if (err) {
-        console.error(err);
+        console.log(chalk.red("\u2639 添加新模板失败!"));
         return;
       }
-      console.log("已成功添加新模板!");
+      console.log(chalk.green("\u262F 已成功添加新模板!"));
     }
   );
 });
