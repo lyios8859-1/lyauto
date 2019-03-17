@@ -29,6 +29,7 @@ module.exports = prompt(question).then(({ name }) => {
     err => {
       if (err) {
         console.log(err);
+        return;
       }
       console.log("模板删除成功！");
     }

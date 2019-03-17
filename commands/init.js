@@ -12,7 +12,7 @@ const question = [
       if (tplList[val]) {
         return true;
       } else if (Object.is(val, "")) {
-        return "Name is required!";
+        return "名称不能为空！";
       } else if (!tplList[val]) {
         return "这个模板不存在.";
       }
@@ -21,7 +21,7 @@ const question = [
   {
     type: "input",
     name: "project",
-    message: "Project name:",
+    message: "项目名称:",
     validate(val) {
       if (!Object.is(val, "")) {
         return true;
