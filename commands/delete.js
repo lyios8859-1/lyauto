@@ -2,6 +2,7 @@ const fs = require("fs");
 const { prompt } = require("inquirer");
 
 let tplList = require(`${__dirname}/../templates/templates.json`);
+let { listTable } = require(`${__dirname}/../tools/utils.js`);
 
 const question = [
   {
@@ -24,14 +25,15 @@ module.exports = prompt(question).then(({ name }) => {
   delete tplList[name];
   fs.writeFile(
     `${__dirname}/../templates/templates.json`,
-    JSON.stringify(tplList),
+    JSON.stringify(tplList, null, 2),
     "utf-8",
     err => {
       if (err) {
-        console.log(err);
+        console.error("Error: ", err);
         return;
       }
-      console.log("模板删除成功！");
+      //console.log("模板删除成功！");
+      listTable(tplList, "模板删除成功！");
     }
   );
 });

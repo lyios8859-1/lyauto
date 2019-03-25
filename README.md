@@ -11,7 +11,7 @@ npm init [-y]
 ## 所需工具库
 
 ```shell
-npm i -S chalk cli-table commander inquirer ora [--registry=https://registry.npm.taobao.org]
+npm i -S chalk cli-table3 commander inquirer ora [--registry=https://registry.npm.taobao.org]
 ```
 
 ## 目录结构

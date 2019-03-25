@@ -1,9 +1,8 @@
 const fs = require("fs");
-const chalk = require("chalk");
 const { prompt } = require("inquirer");
 
 let tplList = require(`${__dirname}/../templates/templates.json`);
-
+let { listTable } = require(`${__dirname}/../tools/utils.js`);
 const question = [
   {
     type: "input",
@@ -54,10 +53,12 @@ const resultInfo = prompt(question).then(({ tplName, gitUrl, Branch }) => {
     "utf-8",
     err => {
       if (err) {
-        console.log(chalk.red("\u2639 添加新模板失败!"));
+        // console.log(chalk.red("\u2639 添加新模板失败!"));
+        listTable(tplList, "\u2639 添加新模板失败!");
         return;
       }
-      console.log(chalk.green("\u262F 已成功添加新模板!"));
+      listTable(tplList, "\u262F 已成功添加新模板!");
+      // console.log(chalk.green("\u262F 已成功添加新模板!"));
     }
   );
 });

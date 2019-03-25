@@ -2,6 +2,7 @@ const chalk = require("chalk");
 const ora = require("ora");
 const { prompt } = require("inquirer");
 let tplList = require(`${__dirname}/../templates/templates.json`);
+let { listTable } = require(`${__dirname}/../tools/utils.js`);
 
 const question = [
   {
@@ -44,6 +45,7 @@ module.exports = prompt(question).then(({ name, project, place }) => {
 
   lyOra.start();
   console.log(`${gitPlace}#${gitBranch} ${place}/${project}`);
-  console.log(chalk.green("新项目已成功初始化!"));
+  //console.log(chalk.green("新项目已成功初始化!"));
+  listTable(tplList, "新项目已成功初始化!");
   lyOra.stop();
 });
